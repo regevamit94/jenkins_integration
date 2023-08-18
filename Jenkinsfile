@@ -50,11 +50,10 @@ pipeline{
                     def statusCode=sh(script: "docker ps --format \"table {{.Names}}\" | grep -w $DOCKERNAME", returnStatus:true)
                     if(statusCode == 0){
                         echo "Container: $DOCKERNAME is still alive. Test failed"
-                    }   
+                    }
                 }
 
             }
         }
     }
-    
 }
